@@ -1,0 +1,3390 @@
+#usda 1.0
+(
+    customLayerData = {
+        string Copyright = "Copyright 2022 - 2024 PICO. All rights reserved."
+        string RuntimeVersion = "Runtime V6.2.0.0.mol.20261007"
+        string Version = "Spatial Editor V6.2.4"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def Xform "OceanWorldCrystalBall"
+    {
+        def Xform "TransparentCrystalShell"
+        {
+            def Sphere "crystal_glass_outer" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/TransparentCrystalShell/crystal_glass_outer/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (9.25, 9.25, 9.25)
+                float3 xformOp:translate = (0, 0.28, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/TransparentCrystalShell/crystal_glass_outer/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.5704825, 0.9114075, 0.9999998) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.28
+                        float inputs:opacity = 0.28
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "crystal_glass_inner_glow" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/TransparentCrystalShell/crystal_glass_inner_glow/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (8.6, 8.6, 8.6)
+                float3 xformOp:translate = (0, 0.28, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/TransparentCrystalShell/crystal_glass_inner_glow/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.10654084, 0.6382828, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.16
+                        float inputs:opacity = 0.16
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "OceanWaterCore"
+        {
+            def Sphere "ocean_water_blue_core" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/OceanWaterCore/ocean_water_blue_core/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (7.75, 6.8, 7.75)
+                float3 xformOp:translate = (0, 0.24, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/OceanWaterCore/ocean_water_blue_core/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.0015489283, 0.1192799, 0.53823555) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.62
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cube "ocean_sandy_seabed" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/OceanWaterCore/ocean_sandy_seabed/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double size = 0.20000000298023224
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (6.25, 0.5, 4.1)
+                float3 xformOp:translate = (0, -0.45, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/OceanWaterCore/ocean_sandy_seabed/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.5704809, 0.34239203, 0.09462958) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "CoralReefBase"
+        {
+            def Cylinder "reef_base_rock" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/reef_base_rock/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                float3 xformOp:scale = (4.1, 0.9, 2.6)
+                float3 xformOp:translate = (-0.18, -0.35, 0.03)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/reef_base_rock/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.08898145, 0.039681945, 0.033104755) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "coral_branch_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9702957, 0, 0, 0.2419219)
+                float3 xformOp:scale = (0.35, 2.3, 0.35)
+                float3 xformOp:translate = (-0.45, -0.18, -0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.99999857, 0.09463022, 0.15487242) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "coral_tip_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.55, 0.55, 0.55)
+                float3 xformOp:translate = (-0.45, 0.0132, -0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.99999857, 0.09463022, 0.15487242) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "coral_branch_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9755283, 0.15450852, -0.024471745, 0.15450852)
+                float3 xformOp:scale = (0.35, 1.7, 0.35)
+                float3 xformOp:translate = (-0.32, -0.18, 0.22)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.9999984, 0.19599484, 0.043233573) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "coral_tip_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.55, 0.55, 0.55)
+                float3 xformOp:translate = (-0.32, -0.0372, 0.22)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.9999984, 0.19599484, 0.043233573) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "coral_branch_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9487398, 0.30826426, -0.021555936, 0.06634235)
+                float3 xformOp:scale = (0.35, 1.9, 0.35)
+                float3 xformOp:translate = (-0.12, -0.18, -0.24)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.8688986, 0.03968235, 0.29569972) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "coral_tip_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.55, 0.55, 0.55)
+                float3 xformOp:translate = (-0.12, -0.0204, -0.24)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.8688986, 0.03968235, 0.29569972) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "coral_branch_4" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_4/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.8908708, 0.45392135, 0.007923226, -0.015550207)
+                float3 xformOp:scale = (0.35, 2.4, 0.35)
+                float3 xformOp:translate = (0.12, -0.18, 0.18)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.9999985, 0.263274, 0.10048142) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "coral_tip_4" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_4/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.55, 0.55, 0.55)
+                float3 xformOp:translate = (0.12, 0.0216, 0.18)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.9999985, 0.263274, 0.10048142) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "coral_branch_5" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_5/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.80458516, 0.5845653, 0.06144029, -0.084565304)
+                float3 xformOp:scale = (0.35, 1.6, 0.35)
+                float3 xformOp:translate = (0.36, -0.18, -0.05)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_branch_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.60382724, 0.05087626, 0.47699976) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "coral_tip_5" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_5/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.55, 0.55, 0.55)
+                float3 xformOp:translate = (0.36, -0.0456, -0.05)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/CoralReefBase/coral_tip_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.60382724, 0.05087626, 0.47699976) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "TropicalFishSchool"
+        {
+            def Xform "fish_instance_1"
+            {
+                def Sphere "tropical_fish_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_1/tropical_fish_1/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.8, 0.4, 0.35)
+                    float3 xformOp:translate = (-0.58, -0.02, 0.36)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_1/tropical_fish_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.99999845, 0.47700047, 0.027211716) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cone "fish_tail_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_1/fish_tail_1/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                    float3 xformOp:scale = (0.4, 0.5, 0.4)
+                    float3 xformOp:translate = (-0.69, -0.02, 0.36)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_1/fish_tail_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.99999845, 0.47700047, 0.027211716) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "fish_instance_2"
+            {
+                def Sphere "tropical_fish_2" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_2/tropical_fish_2/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.976296, 0, 0.21643962, 0)
+                    float3 xformOp:scale = (0.8, 0.4, 0.35)
+                    float3 xformOp:translate = (-0.39, 0.12, 0.24)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_2/tropical_fish_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.03310649, 0.5225211, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cone "fish_tail_2" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_2/fish_tail_2/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                    float3 xformOp:scale = (0.4, 0.5, 0.4)
+                    float3 xformOp:translate = (-0.5, 0.12, 0.24)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_2/fish_tail_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.03310649, 0.5225211, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "fish_instance_3"
+            {
+                def Sphere "tropical_fish_3" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_3/tropical_fish_3/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.90630776, 0, 0.42261827, 0)
+                    float3 xformOp:scale = (0.8, 0.4, 0.35)
+                    float3 xformOp:translate = (-0.2, 0.26, 0.12)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_3/tropical_fish_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.9114063, 0.04696475, 0.119280115) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cone "fish_tail_3" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_3/fish_tail_3/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                    float3 xformOp:scale = (0.4, 0.5, 0.4)
+                    float3 xformOp:translate = (-0.31, 0.26, 0.12)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_3/fish_tail_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.9114063, 0.04696475, 0.119280115) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "fish_instance_4"
+            {
+                def Sphere "tropical_fish_4" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_4/tropical_fish_4/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.7933533, 0, 0.6087614, 0)
+                    float3 xformOp:scale = (0.8, 0.4, 0.35)
+                    float3 xformOp:translate = (-0.01, -0.02, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_4/tropical_fish_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.60382813, 0.21404104, 0.9999998) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cone "fish_tail_4" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_4/fish_tail_4/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                    float3 xformOp:scale = (0.4, 0.5, 0.4)
+                    float3 xformOp:translate = (-0.12, -0.02, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_4/fish_tail_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.60382813, 0.21404104, 0.9999998) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "fish_instance_5"
+            {
+                def Sphere "tropical_fish_5" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_5/tropical_fish_5/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.64278764, 0, 0.76604444, 0)
+                    float3 xformOp:scale = (0.8, 0.4, 0.35)
+                    float3 xformOp:translate = (0.18, 0.12, 0.36)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_5/tropical_fish_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.033105638, 0.99999964, 0.4769998) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cone "fish_tail_5" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_5/fish_tail_5/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                    float3 xformOp:scale = (0.4, 0.5, 0.4)
+                    float3 xformOp:translate = (0.07, 0.12, 0.36)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_5/fish_tail_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.033105638, 0.99999964, 0.4769998) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "fish_instance_6"
+            {
+                def Sphere "tropical_fish_6" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_6/tropical_fish_6/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.4617486, 0, 0.8870109, 0)
+                    float3 xformOp:scale = (0.8, 0.4, 0.35)
+                    float3 xformOp:translate = (0.37, 0.26, 0.24)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_6/tropical_fish_6/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.95510334, 0.7874129, 0.050876025) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cone "fish_tail_6" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_6/fish_tail_6/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                    float3 xformOp:scale = (0.4, 0.5, 0.4)
+                    float3 xformOp:translate = (0.26, 0.26, 0.24)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_6/fish_tail_6/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.95510334, 0.7874129, 0.050876025) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "fish_instance_7"
+            {
+                def Sphere "tropical_fish_7" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_7/tropical_fish_7/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.25881907, 0, 0.9659258, 0)
+                    float3 xformOp:scale = (0.8, 0.4, 0.35)
+                    float3 xformOp:translate = (0.56, -0.02, 0.12)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_7/tropical_fish_7/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.019608373, 0.26327288, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cone "fish_tail_7" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_7/fish_tail_7/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (0.70710677, 0, 0, 0.70710677)
+                    float3 xformOp:scale = (0.4, 0.5, 0.4)
+                    float3 xformOp:translate = (0.45, -0.02, 0.12)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/TropicalFishSchool/fish_instance_7/fish_tail_7/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.019608373, 0.26327288, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 1
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+        }
+
+        def Xform "SeaTurtle"
+        {
+            def Sphere "sea_turtle_shell" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_shell/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9702957, 0, -0.2419219, 0)
+                float3 xformOp:scale = (1.7, 0.9, 1.25)
+                float3 xformOp:translate = (0.37, 0.03, -0.28)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_shell/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.0134118525, 0.1706449, 0.06372378) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "sea_turtle_head" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_head/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.55, 0.4, 0.45)
+                float3 xformOp:translate = (0.52, 0.04, -0.34)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_head/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.03310495, 0.34239167, 0.11928017) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "sea_turtle_flipper_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.98768836, 0, 0, 0.15643448)
+                float3 xformOp:scale = (0.8, 0.175, 0.4)
+                float3 xformOp:translate = (0.24, -0.01, -0.16)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.0219811, 0.2738384, 0.09462961) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "sea_turtle_flipper_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.97268313, 0.027164562, 0.17151028, 0.15405788)
+                float3 xformOp:scale = (0.8, 0.175, 0.4)
+                float3 xformOp:translate = (0.24, -0.01, 0.02)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.0219811, 0.2738384, 0.09462961) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "sea_turtle_flipper_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9281235, 0.05350374, 0.3378093, 0.14700033)
+                float3 xformOp:scale = (0.8, 0.175, 0.4)
+                float3 xformOp:translate = (0.48, -0.01, -0.48)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.0219811, 0.2738384, 0.09462961) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "sea_turtle_flipper_4" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_4/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.8553632, 0.07821724, 0.49384418, 0.13547623)
+                float3 xformOp:scale = (0.8, 0.175, 0.4)
+                float3 xformOp:translate = (0.48, -0.01, -0.22)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeaTurtle/sea_turtle_flipper_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.0219811, 0.2738384, 0.09462961) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "GlowingJellyfish"
+        {
+            def Xform "jellyfish_instance_1"
+            {
+                def Sphere "jellyfish_bell_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_bell_1/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.9, 0.6, 0.9)
+                    float3 xformOp:translate = (-0.32, 0.43, -0.34)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_bell_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.53823644, 0.19599405, 0.9999998) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.74
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_1_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_tentacle_1_1/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (-0.355, 0.29, -0.34)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_tentacle_1_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_1_2" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_tentacle_1_2/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (-0.32, 0.29, -0.34)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_tentacle_1_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_1_3" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_tentacle_1_3/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (-0.285, 0.29, -0.34)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_1/jellyfish_tentacle_1_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "jellyfish_instance_2"
+            {
+                def Sphere "jellyfish_bell_2" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_bell_2/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.9, 0.6, 0.9)
+                    float3 xformOp:translate = (0.02, 0.43, -0.4)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_bell_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.53823644, 0.19599405, 0.9999998) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.74
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_2_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_tentacle_2_1/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (-0.015, 0.29, -0.4)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_tentacle_2_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_2_2" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_tentacle_2_2/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (0.02, 0.29, -0.4)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_tentacle_2_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_2_3" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_tentacle_2_3/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (0.055, 0.29, -0.4)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_2/jellyfish_tentacle_2_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+
+            def Xform "jellyfish_instance_3"
+            {
+                def Sphere "jellyfish_bell_3" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_bell_3/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.9, 0.6, 0.9)
+                    float3 xformOp:translate = (0.32, 0.43, -0.33)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_bell_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.53823644, 0.19599405, 0.9999998) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.74
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_3_1" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_tentacle_3_1/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (0.285, 0.29, -0.33)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_tentacle_3_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_3_2" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_tentacle_3_2/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (0.32, 0.29, -0.33)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_tentacle_3_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cylinder "jellyfish_tentacle_3_3" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    uniform token axis = "Y"
+                    float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                    double height = 0.20000000298023224
+                    rel material:binding = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_tentacle_3_3/DefaultMaterial> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    double radius = 0.10000000149011612
+                    quatf xformOp:orient = (1, 0, 0, 0)
+                    float3 xformOp:scale = (0.09, 1.3, 0.09)
+                    float3 xformOp:translate = (0.355, 0.29, -0.33)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Material "DefaultMaterial" (
+                        customData = {
+                            string materialType = "PHYSICALLY_BASED"
+                        }
+                    )
+                    {
+                        token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlowingJellyfish/jellyfish_instance_3/jellyfish_tentacle_3_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                        def Shader "DefaultSurfaceShader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.47700086, 0.7105664, 0.9999999) (
+                                colorSpace = "lin_srgb"
+                            )
+                            color3f inputs:diffuseColor.connect = None
+                            float inputs:diffuseOpacity = 0.66
+                            token outputs:surface
+                        }
+                    }
+                }
+            }
+        }
+
+        def Xform "SeagrassCluster"
+        {
+            def Cylinder "seagrass_blade_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.99026805, 0, 0, -0.1391731)
+                float3 xformOp:scale = (0.125, 1.8, 0.125)
+                float3 xformOp:translate = (-0.48, -0.22, -0.36)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9945219, 0, 0, -0.104528464)
+                float3 xformOp:scale = (0.125, 2.1, 0.125)
+                float3 xformOp:translate = (-0.38, -0.22, -0.32)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9975641, 0, 0, -0.06975647)
+                float3 xformOp:scale = (0.125, 2.4, 0.125)
+                float3 xformOp:translate = (-0.28, -0.22, -0.28)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_4" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_4/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.99939084, 0, 0, -0.034899496)
+                float3 xformOp:scale = (0.125, 1.8, 0.125)
+                float3 xformOp:translate = (-0.18, -0.22, -0.36)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_5" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_5/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.125, 2.1, 0.125)
+                float3 xformOp:translate = (-0.08, -0.22, -0.32)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_6" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_6/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.99939084, 0, 0, 0.034899496)
+                float3 xformOp:scale = (0.125, 2.4, 0.125)
+                float3 xformOp:translate = (0.02, -0.22, -0.28)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_6/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_7" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_7/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9975641, 0, 0, 0.06975647)
+                float3 xformOp:scale = (0.125, 1.8, 0.125)
+                float3 xformOp:translate = (0.12, -0.22, -0.36)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_7/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_8" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_8/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9945219, 0, 0, 0.104528464)
+                float3 xformOp:scale = (0.125, 2.1, 0.125)
+                float3 xformOp:translate = (0.22, -0.22, -0.32)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_8/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_9" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_9/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.99026805, 0, 0, 0.1391731)
+                float3 xformOp:scale = (0.125, 2.4, 0.125)
+                float3 xformOp:translate = (0.32, -0.22, -0.28)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_9/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "seagrass_blade_10" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_10/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9848077, 0, 0, 0.17364818)
+                float3 xformOp:scale = (0.125, 1.8, 0.125)
+                float3 xformOp:translate = (0.42, -0.22, -0.36)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/SeagrassCluster/seagrass_blade_10/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.007194677, 0.47699973, 0.1328683) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "ShellDetails"
+        {
+            def Sphere "shell_pearl_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.6, 0.3, 0.45)
+                float3 xformOp:translate = (-0.36, -0.37, 0.36)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.999999, 0.63828367, 0.34239164) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "shell_pearl_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.976296, 0, 0.21643962, 0)
+                float3 xformOp:scale = (0.6, 0.3, 0.45)
+                float3 xformOp:translate = (-0.18, -0.37, 0.42)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.999999, 0.63828367, 0.34239164) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "shell_pearl_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.90630776, 0, 0.42261827, 0)
+                float3 xformOp:scale = (0.6, 0.3, 0.45)
+                float3 xformOp:translate = (0.18, -0.37, 0.39)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.999999, 0.63828367, 0.34239164) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "shell_pearl_4" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_4/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.7933533, 0, 0.6087614, 0)
+                float3 xformOp:scale = (0.6, 0.3, 0.45)
+                float3 xformOp:translate = (0.42, -0.37, 0.27)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/ShellDetails/shell_pearl_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.999999, 0.63828367, 0.34239164) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 1
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "BubbleField"
+        {
+            def Sphere "bubble_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (-0.68, -0.18, -0.52)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (-0.41, 0.05, 0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (-0.14, 0.28, -0.4)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_4" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_4/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (0.13, 0.51, 0.2)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_4/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_5" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_5/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (0.4, -0.18, -0.28)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_5/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_6" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_6/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (0.67, 0.05, 0.32)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_6/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_7" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_7/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (-0.68, 0.28, -0.16)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_7/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_8" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_8/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (-0.41, 0.51, 0.44)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_8/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_9" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_9/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (-0.14, -0.18, -0.04)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_9/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_10" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_10/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (0.13, 0.05, -0.52)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_10/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_11" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_11/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (0.4, 0.28, 0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_11/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_12" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_12/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (0.67, 0.51, -0.4)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_12/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_13" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_13/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (-0.68, -0.18, 0.2)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_13/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_14" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_14/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (-0.41, 0.05, -0.28)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_14/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_15" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_15/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (-0.14, 0.28, 0.32)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_15/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_16" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_16/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (0.13, 0.51, -0.16)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_16/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_17" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_17/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (0.4, -0.18, 0.44)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_17/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_18" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_18/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (0.67, 0.05, -0.04)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_18/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_19" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_19/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (-0.68, 0.28, -0.52)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_19/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_20" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_20/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (-0.41, 0.51, 0.08)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_20/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_21" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_21/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (-0.14, -0.18, -0.4)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_21/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_22" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_22/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.175, 0.175, 0.175)
+                float3 xformOp:translate = (0.13, 0.05, 0.2)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_22/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_23" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_23/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.235, 0.235, 0.235)
+                float3 xformOp:translate = (0.4, 0.28, -0.28)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_23/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Sphere "bubble_24" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/BubbleField/bubble_24/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.295, 0.295, 0.295)
+                float3 xformOp:translate = (0.67, 0.51, 0.32)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/BubbleField/bubble_24/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.47700086, 0.86889917, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.42
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "UnderwaterLightBeams"
+        {
+            def Cylinder "underwater_light_beam_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/UnderwaterLightBeams/underwater_light_beam_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9778918, 0.19008291, -0.016630098, 0.085554436)
+                float3 xformOp:scale = (0.35, 5.25, 0.35)
+                float3 xformOp:translate = (-0.42, 0.78, -0.18)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/UnderwaterLightBeams/underwater_light_beam_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.14732055, 0.7105662, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.22
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "underwater_light_beam_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/UnderwaterLightBeams/underwater_light_beam_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.98162717, 0.190809, 0, 0)
+                float3 xformOp:scale = (0.35, 5.25, 0.35)
+                float3 xformOp:translate = (0, 0.78, -0.18)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/UnderwaterLightBeams/underwater_light_beam_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.14732055, 0.7105662, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.22
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cylinder "underwater_light_beam_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                uniform token axis = "Y"
+                float3[] extent = [(-0.1, -0.100000024, -0.1), (0.1, 0.099999994, 0.1)]
+                double height = 0.20000000298023224
+                rel material:binding = </Root/OceanWorldCrystalBall/UnderwaterLightBeams/underwater_light_beam_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double radius = 0.10000000149011612
+                quatf xformOp:orient = (0.9778918, 0.19008291, 0.016630098, -0.085554436)
+                float3 xformOp:scale = (0.35, 5.25, 0.35)
+                float3 xformOp:translate = (0.42, 0.78, -0.18)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/UnderwaterLightBeams/underwater_light_beam_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.14732055, 0.7105662, 0.9999999) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.22
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "GlassHighlightStreaks"
+        {
+            def Cube "glass_highlight_streak_1" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/GlassHighlightStreaks/glass_highlight_streak_1/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double size = 0.20000000298023224
+                quatf xformOp:orient = (0.9702957, 0, 0, -0.2419219)
+                float3 xformOp:scale = (0.275, 2.6, 0.1)
+                float3 xformOp:translate = (-0.43, 0.68, -0.6)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlassHighlightStreaks/glass_highlight_streak_1/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.91140795, 1, 0.9999998) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.72
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cube "glass_highlight_streak_2" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/GlassHighlightStreaks/glass_highlight_streak_2/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double size = 0.20000000298023224
+                quatf xformOp:orient = (0.9781476, 0, 0, 0.2079117)
+                float3 xformOp:scale = (0.275, 2.6, 0.1)
+                float3 xformOp:translate = (0.38, 0.58, -0.6)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlassHighlightStreaks/glass_highlight_streak_2/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.91140795, 1, 0.9999998) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.72
+                        token outputs:surface
+                    }
+                }
+            }
+
+            def Cube "glass_highlight_streak_3" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                float3[] extent = [(-0.1, -0.1, -0.1), (0.1, 0.1, 0.1)]
+                rel material:binding = </Root/OceanWorldCrystalBall/GlassHighlightStreaks/glass_highlight_streak_3/DefaultMaterial> (
+                    bindMaterialAs = "weakerThanDescendants"
+                )
+                double size = 0.20000000298023224
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (0.275, 2.6, 0.1)
+                float3 xformOp:translate = (0, 0.83, -0.6)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Material "DefaultMaterial" (
+                    customData = {
+                        string materialType = "PHYSICALLY_BASED"
+                    }
+                )
+                {
+                    token outputs:surface.connect = </Root/OceanWorldCrystalBall/GlassHighlightStreaks/glass_highlight_streak_3/DefaultMaterial/DefaultSurfaceShader.outputs:surface>
+
+                    def Shader "DefaultSurfaceShader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.91140795, 1, 0.9999998) (
+                            colorSpace = "lin_srgb"
+                        )
+                        color3f inputs:diffuseColor.connect = None
+                        float inputs:diffuseOpacity = 0.72
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+
+        def Xform "LightingEnhancements"
+        {
+            def Xform "cool_top_left_ocean_key"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                float3 xformOp:translate = (-0.65, 1.75, 0.55)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def SpatialComponent "DirectionalLightComponent"
+                {
+                    uniform token info:id = "DirectionalLightComponent"
+                    uint64 info:typeId = 2727022354109603371
+                    float intensity = 1200
+                }
+            }
+
+            def Xform "coral_warm_fill"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                float3 xformOp:translate = (0.28, -0.25, 0.22)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def SpatialComponent "PointLightComponent"
+                {
+                    uniform token info:id = "PointLightComponent"
+                    uint64 info:typeId = 10164309064531404901
+                    float intensity = 2000
+                }
+            }
+
+            def Xform "jellyfish_cyan_glow"
+            {
+                quatf xformOp:orient = (1, 0, 0, 0) (
+                    customData = {
+                        float3 euler = (0, 0, 0)
+                    }
+                )
+                float3 xformOp:scale = (1, 1, 1)
+                float3 xformOp:translate = (-0.32, 0.64, -0.24)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def SpatialComponent "PointLightComponent"
+                {
+                    uniform token info:id = "PointLightComponent"
+                    uint64 info:typeId = 10164309064531404901
+                    float intensity = 1800
+                }
+            }
+        }
+    }
+}
+

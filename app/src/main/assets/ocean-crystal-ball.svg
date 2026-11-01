@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Ocean world crystal ball preview artwork</title>
+  <desc id="desc">A transparent glass crystal ball containing coral reef, tropical fish, turtle, glowing jellyfish, sea grass, shells, blue underwater light beams and bubbles.</desc>
+  <defs>
+    <radialGradient id="sphereWater" cx="45%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#e8fbff" stop-opacity="0.94"/>
+      <stop offset="35%" stop-color="#7bd8f2" stop-opacity="0.82"/>
+      <stop offset="68%" stop-color="#1d83bd" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#06406e" stop-opacity="0.92"/>
+    </radialGradient>
+    <radialGradient id="glass" cx="38%" cy="24%" r="74%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="28%" stop-color="#dcfbff" stop-opacity="0.42"/>
+      <stop offset="60%" stop-color="#8fe9ff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.06"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#d8fbff" stop-opacity="0.52"/>
+      <stop offset="1" stop-color="#88ddff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="coralPink" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffb1c9"/>
+      <stop offset="1" stop-color="#f45d90"/>
+    </linearGradient>
+    <linearGradient id="coralOrange" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffd27c"/>
+      <stop offset="1" stop-color="#ff7d4a"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#08263e" flood-opacity="0.32"/>
+    </filter>
+    <clipPath id="ballClip">
+      <circle cx="360" cy="256" r="208"/>
+    </clipPath>
+  </defs>
+
+  <rect width="720" height="520" fill="none"/>
+  <ellipse cx="360" cy="472" rx="196" ry="25" fill="#032a48" opacity="0.22"/>
+
+  <g filter="url(#shadow)">
+    <circle cx="360" cy="256" r="208" fill="url(#sphereWater)"/>
+    <g clip-path="url(#ballClip)">
+      <path d="M145 155 C210 110 283 91 369 96 C478 102 559 153 590 236 C554 196 495 178 411 175 C306 171 231 191 145 155Z" fill="#c3f6ff" opacity="0.18"/>
+      <path d="M195 70 L360 470 L268 470 L116 70Z" fill="url(#beam)" opacity="0.75"/>
+      <path d="M363 78 L500 470 L432 470 L292 78Z" fill="url(#beam)" opacity="0.42"/>
+      <path d="M480 96 L602 426 L552 438 L427 96Z" fill="url(#beam)" opacity="0.36"/>
+
+      <path d="M140 364 C224 334 305 347 372 370 C451 398 522 387 584 346 L584 470 L140 470Z" fill="#0b5e8e" opacity="0.38"/>
+      <path d="M155 392 C242 358 315 369 380 394 C457 424 525 412 578 377 L578 470 L155 470Z" fill="#073e6a" opacity="0.62"/>
+      <path d="M164 418 C247 393 310 395 374 419 C457 452 527 434 575 405 L575 470 L164 470Z" fill="#052f57" opacity="0.78"/>
+
+      <g id="coral" transform="translate(212 322)">
+        <path d="M0 74 C3 43 10 25 25 7 M22 64 C24 41 36 30 48 18 M-12 66 C-2 47 -3 31 8 19 M19 31 C8 22 4 15 2 6" fill="none" stroke="url(#coralPink)" stroke-width="12" stroke-linecap="round"/>
+        <path d="M79 83 C82 58 92 40 112 26 M105 75 C107 54 122 43 139 35 M72 66 C83 49 79 36 87 25" fill="none" stroke="url(#coralOrange)" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="-7" cy="66" r="6" fill="#ffcfdf"/>
+        <circle cx="48" cy="18" r="6" fill="#ffd5e3"/>
+        <circle cx="139" cy="35" r="7" fill="#ffe4a4"/>
+      </g>
+
+      <g id="seagrass" stroke-linecap="round" fill="none">
+        <path d="M450 435 C435 391 447 366 433 327" stroke="#66e5a5" stroke-width="8"/>
+        <path d="M469 438 C474 394 462 369 478 333" stroke="#4ed08e" stroke-width="7"/>
+        <path d="M498 436 C481 396 507 371 496 339" stroke="#8ef0bd" stroke-width="6"/>
+        <path d="M177 434 C199 394 178 367 198 337" stroke="#63dea0" stroke-width="7"/>
+        <path d="M191 438 C187 397 209 380 213 349" stroke="#94f3c4" stroke-width="6"/>
+      </g>
+
+      <g id="fish-school">
+        <g transform="translate(456 238)">
+          <path d="M-40 0 C-20 -18 18 -19 39 0 C17 18 -20 18 -40 0Z" fill="#ffd166"/>
+          <path d="M39 0 L60 -15 L56 0 L60 15Z" fill="#ff8a4c"/>
+          <circle cx="-21" cy="-4" r="3" fill="#092742"/>
+          <path d="M-6 -15 C2 -26 19 -25 25 -11" fill="#ffb64e"/>
+        </g>
+        <g transform="translate(274 244) scale(.72)">
+          <path d="M-40 0 C-20 -18 18 -19 39 0 C17 18 -20 18 -40 0Z" fill="#ff7fb7"/>
+          <path d="M39 0 L60 -15 L56 0 L60 15Z" fill="#ffcf5b"/>
+          <circle cx="-21" cy="-4" r="3" fill="#092742"/>
+        </g>
+        <g transform="translate(394 172) scale(.56)">
+          <path d="M-40 0 C-20 -18 18 -19 39 0 C17 18 -20 18 -40 0Z" fill="#7df0ff"/>
+          <path d="M39 0 L60 -15 L56 0 L60 15Z" fill="#42b8e8"/>
+          <circle cx="-21" cy="-4" r="3" fill="#092742"/>
+        </g>
+      </g>
+
+      <g id="turtle" transform="translate(337 318) rotate(-8)">
+        <ellipse cx="0" cy="0" rx="47" ry="31" fill="#70bc8f"/>
+        <ellipse cx="0" cy="0" rx="35" ry="24" fill="#2f8e75"/>
+        <path d="M-21 -17 L-5 17 M5 -19 L20 16 M-32 0 H32" stroke="#9be0b3" stroke-width="3" opacity=".8"/>
+        <circle cx="54" cy="-3" r="13" fill="#7bcb95"/>
+        <circle cx="58" cy="-6" r="2" fill="#073e3d"/>
+        <path d="M-39 -20 C-70 -39 -84 -30 -69 -9" fill="#6fc189"/>
+        <path d="M-38 20 C-71 41 -85 31 -68 9" fill="#6fc189"/>
+        <path d="M34 -19 C62 -37 76 -28 65 -6" fill="#6fc189"/>
+        <path d="M34 20 C62 39 75 28 65 8" fill="#6fc189"/>
+      </g>
+
+      <g id="jellyfish" transform="translate(507 302)" filter="url(#softGlow)">
+        <path d="M-33 0 C-31 -36 30 -36 34 0 C22 12 -18 14 -33 0Z" fill="#caa8ff" opacity=".9"/>
+        <path d="M-25 6 C-26 36 -42 47 -34 78 M-7 9 C-4 42 -18 54 -12 90 M10 8 C14 42 30 52 20 87 M28 4 C31 34 45 43 38 72" stroke="#e7ccff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+        <circle cx="0" cy="-7" r="8" fill="#ffffff" opacity=".42"/>
+      </g>
+
+      <g id="shells">
+        <path d="M428 407 C446 385 475 386 492 407 C476 420 445 420 428 407Z" fill="#ffd7b3"/>
+        <path d="M434 407 C447 397 473 397 487 407" fill="none" stroke="#ff9c7f" stroke-width="3"/>
+        <path d="M248 411 C262 395 282 399 291 418 C275 427 254 424 248 411Z" fill="#f3e1ff"/>
+      </g>
+
+      <g id="bubbles" fill="#effdff" opacity=".82">
+        <circle cx="220" cy="228" r="9" opacity=".45"/>
+        <circle cx="250" cy="187" r="5" opacity=".72"/>
+        <circle cx="511" cy="174" r="8" opacity=".5"/>
+        <circle cx="548" cy="232" r="4" opacity=".7"/>
+        <circle cx="310" cy="137" r="6" opacity=".45"/>
+        <circle cx="440" cy="108" r="4" opacity=".55"/>
+        <circle cx="176" cy="311" r="5" opacity=".62"/>
+        <circle cx="565" cy="345" r="7" opacity=".42"/>
+        <circle cx="382" cy="221" r="4" opacity=".62"/>
+      </g>
+    </g>
+
+    <circle cx="360" cy="256" r="208" fill="url(#glass)"/>
+    <circle cx="360" cy="256" r="207" fill="none" stroke="#eafcff" stroke-width="3" opacity=".9"/>
+    <circle cx="360" cy="256" r="196" fill="none" stroke="#ffffff" stroke-width="1.5" opacity=".28"/>
+    <path d="M224 124 C281 70 400 51 489 103" fill="none" stroke="#ffffff" stroke-width="19" stroke-linecap="round" opacity=".34"/>
+    <path d="M199 171 C224 137 258 119 294 109" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity=".58"/>
+    <path d="M506 394 C547 355 564 304 561 247" fill="none" stroke="#e1fbff" stroke-width="12" stroke-linecap="round" opacity=".16"/>
+  </g>
+</svg>

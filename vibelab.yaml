@@ -1,0 +1,34 @@
+app:
+  name: "海洋水晶球"
+  slogan: "把治愈系海洋微景观装进透明水晶球"
+  description: "海洋水晶球是一款 PICO Spatial 展示应用。用户打开后可以在空间窗口中看到透明水晶球与球内海洋微景观：珊瑚礁、热带鱼、海龟、发光水母、海草、贝壳、蓝色水下光束、气泡和玻璃高光，旁侧信息面板提供主题说明与交互提示。当前版本直接加载已打包的 Spatial Editor USDA 3D 场景资源，适合作为空间内容展示样例。"
+  tags:
+    - "空间展示"
+    - "海洋"
+    - "水晶球"
+    - "治愈"
+  category: game
+  icon: assets/icon.jpg
+  landscape: assets/landscape.png
+  detail_images:
+    - assets/detail-1.png
+    - assets/detail-2.png
+    - assets/detail-3.png
+    - assets/detail-4.png
+    - assets/detail-5.png
+  videos: []
+version:
+  name: "1.0"
+  notes: "首个上传版本：包含海洋世界水晶球空间展示、原生 3D 场景资源加载和信息面板。"
+build:
+  repo_url: "https://github.com/bingxueyeah/OceanWorldCrystalBall"
+  repo_visibility: public
+  tech_stack: spatial
+  ai_tool: Claude Code
+  ai_model: GPT-5.5
+  features:
+    - "PICO Spatial SDK Kotlin 应用"
+    - "Volumetric 空间窗口"
+    - "SpatialView 原生 3D 场景加载"
+    - "OceanWorldCrystalBall 主题信息面板"
+  teammates: []

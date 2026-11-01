@@ -27,8 +27,5 @@ build:
   ai_tool: Claude Code
   ai_model: GPT-5.5
   features:
-    - "PICO Spatial SDK Kotlin 应用"
-    - "Volumetric 空间窗口"
-    - "SpatialView 原生 3D 场景加载"
-    - "OceanWorldCrystalBall 主题信息面板"
+    - none
   teammates: []
